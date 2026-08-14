@@ -63,6 +63,9 @@ public class TestRunner {
         System.out.println("Total : " + (passed + failed));
         System.out.println(failed == 0 ? "ALL TESTS PASSED" : "SOME TESTS FAILED");
 
+        Notifier a = new CountingNotifier(new EmailNotifier()); //สร้างแล้วก็ + count ไปเลย
+        a.send("hello");
+
         if (failed > 0) {
             System.exit(1);
         }
